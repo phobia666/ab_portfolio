@@ -1,0 +1,299 @@
+@import "tailwindcss";
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+body {
+  margin: 0;
+  font-family: Inter, Segoe UI, Arial, sans-serif;
+  background: #02040b;
+  color: #f1f5f9;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+html.use-custom-cursor body {
+  cursor: none;
+}
+
+html.use-custom-cursor a,
+html.use-custom-cursor button {
+  cursor: none;
+}
+
+.space-gradient {
+  background:
+    radial-gradient(1300px 650px at 8% 0%, rgba(59, 130, 246, 0.24), transparent 65%),
+    radial-gradient(900px 600px at 78% 8%, rgba(168, 85, 247, 0.2), transparent 68%),
+    radial-gradient(700px 450px at 30% 80%, rgba(14, 165, 233, 0.16), transparent 70%),
+    linear-gradient(180deg, #030513 0%, #030712 42%, #060a16 100%);
+  animation: space-drift 22s ease-in-out infinite alternate;
+}
+
+.stars-layer {
+  background-repeat: repeat;
+  background-size: 420px 420px;
+  opacity: 0.55;
+}
+
+.stars-sm {
+  background-image:
+    radial-gradient(2px 2px at 14px 34px, rgba(255, 255, 255, 0.95), transparent 52%),
+    radial-gradient(1.5px 1.5px at 120px 210px, rgba(255, 255, 255, 0.8), transparent 55%),
+    radial-gradient(1.8px 1.8px at 285px 74px, rgba(209, 213, 219, 0.9), transparent 55%),
+    radial-gradient(1.6px 1.6px at 345px 310px, rgba(224, 231, 255, 0.95), transparent 55%);
+  animation: star-float 90s linear infinite;
+}
+
+.stars-md {
+  background-image:
+    radial-gradient(2px 2px at 80px 40px, rgba(244, 244, 245, 0.7), transparent 58%),
+    radial-gradient(2.2px 2.2px at 250px 300px, rgba(192, 132, 252, 0.6), transparent 58%),
+    radial-gradient(2px 2px at 380px 190px, rgba(165, 180, 252, 0.66), transparent 58%);
+  animation: star-float-reverse 120s linear infinite;
+}
+
+.nebula-glow {
+  width: 28rem;
+  height: 28rem;
+  border-radius: 9999px;
+  filter: blur(48px);
+  opacity: 0.23;
+}
+
+.nebula-a {
+  left: -8rem;
+  top: 30%;
+  background: radial-gradient(circle, rgba(168, 85, 247, 0.8), transparent 66%);
+  animation: nebula-shift 18s ease-in-out infinite alternate;
+}
+
+.nebula-b {
+  right: -10rem;
+  top: 8%;
+  background: radial-gradient(circle, rgba(56, 189, 248, 0.65), transparent 68%);
+  animation: nebula-shift 22s ease-in-out infinite alternate-reverse;
+}
+
+.shooting-star {
+  left: -20%;
+  width: 16rem;
+  height: 2px;
+  opacity: 0;
+  background: linear-gradient(90deg, transparent 0%, rgba(219, 234, 254, 0.95) 50%, transparent 100%);
+  transform: rotate(-18deg);
+  filter: drop-shadow(0 0 10px rgba(147, 197, 253, 0.8));
+  animation-name: shooting;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+}
+
+.loader-ring {
+  width: 5rem;
+  height: 5rem;
+  border-radius: 9999px;
+  border: 2px solid rgba(255, 255, 255, 0.18);
+  border-top-color: #d946ef;
+  border-right-color: #818cf8;
+  animation: spin 0.9s linear infinite;
+  box-shadow: 0 0 35px rgba(217, 70, 239, 0.4);
+}
+
+.link-orbit {
+  border: 1px solid rgba(129, 140, 248, 0.45);
+  border-radius: 9999px;
+  padding: 0.6rem 1rem;
+  color: #f8f9ff;
+  text-decoration: none;
+  background: linear-gradient(140deg, rgba(30, 41, 59, 0.5), rgba(59, 130, 246, 0.15));
+  transition:
+    transform 320ms cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 320ms cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 280ms ease,
+    letter-spacing 280ms ease;
+}
+
+.link-orbit:hover {
+  transform: translateY(-3px) scale(1.02);
+  letter-spacing: 0.04em;
+  border-color: rgba(129, 140, 248, 0.95);
+  box-shadow: 0 0 0 1px rgba(129, 140, 248, 0.42), 0 10px 30px rgba(59, 130, 246, 0.32);
+}
+
+.link-plasma {
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 0.9rem;
+  padding: 0.7rem 1rem;
+  color: #f8f9ff;
+  text-decoration: none;
+  background: linear-gradient(125deg, rgba(244, 114, 182, 0.14), rgba(99, 102, 241, 0.2));
+  transition:
+    transform 320ms cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 320ms cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 280ms ease,
+    filter 280ms ease;
+}
+
+.link-plasma:hover {
+  transform: translateY(-1px) skewX(-1deg);
+  border-color: rgba(244, 114, 182, 0.85);
+  filter: brightness(1.1);
+  box-shadow: 0 12px 24px rgba(232, 121, 249, 0.24), inset 0 0 18px rgba(219, 39, 119, 0.13);
+}
+
+.card-nebula {
+  transition:
+    transform 360ms cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 360ms cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 280ms ease,
+    background-color 320ms ease;
+}
+
+.card-nebula:hover {
+  transform: translateY(-4px);
+  border-color: rgba(129, 140, 248, 0.46);
+  background-color: rgba(8, 47, 73, 0.22);
+  box-shadow: 0 0 0 1px rgba(147, 197, 253, 0.16), 0 20px 35px rgba(30, 64, 175, 0.35);
+}
+
+.card-comet {
+  transition:
+    transform 360ms cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 360ms cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 280ms ease;
+}
+
+.card-comet:hover {
+  transform: translateY(-3px) rotate(-0.3deg);
+  border-color: rgba(236, 72, 153, 0.5);
+  box-shadow: 0 14px 34px rgba(190, 24, 93, 0.26);
+}
+
+.card-orbit {
+  transition:
+    transform 360ms cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 360ms cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 280ms ease;
+}
+
+.card-orbit:hover {
+  transform: translateY(-4px) scale(1.01);
+  border-color: rgba(34, 211, 238, 0.48);
+  box-shadow: 0 16px 34px rgba(14, 116, 144, 0.32), inset 0 0 0 1px rgba(34, 211, 238, 0.16);
+}
+
+.chip-astro {
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 9999px;
+  padding: 0.45rem 0.9rem;
+  font-size: 0.75rem;
+  letter-spacing: 0.06em;
+  background: linear-gradient(135deg, rgba(217, 70, 239, 0.14), rgba(99, 102, 241, 0.14));
+  transition: transform 280ms cubic-bezier(0.22, 1, 0.36, 1), box-shadow 280ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.chip-astro:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 18px rgba(99, 102, 241, 0.2);
+}
+
+.hero-orb {
+  border: 1px solid rgba(217, 70, 239, 0.4);
+  background: linear-gradient(160deg, rgba(217, 70, 239, 0.25), rgba(99, 102, 241, 0.2));
+  box-shadow: 0 0 0 1px rgba(129, 140, 248, 0.14), 0 0 65px rgba(76, 29, 149, 0.38);
+}
+
+@keyframes shooting {
+  0% {
+    transform: translateX(-25vw) translateY(0) rotate(-18deg);
+    opacity: 0;
+  }
+  12% {
+    opacity: 1;
+  }
+  42% {
+    opacity: 0;
+    transform: translateX(120vw) translateY(18vh) rotate(-18deg);
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(120vw) translateY(18vh) rotate(-18deg);
+  }
+}
+
+@keyframes space-drift {
+  0% {
+    transform: scale(1) translateY(0);
+  }
+  100% {
+    transform: scale(1.05) translateY(-1.5%);
+  }
+}
+
+@keyframes star-float {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(14%);
+  }
+}
+
+@keyframes star-float-reverse {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-12%);
+  }
+}
+
+@keyframes nebula-shift {
+  0% {
+    transform: translateY(0) translateX(0) scale(1);
+  }
+  100% {
+    transform: translateY(-18px) translateX(20px) scale(1.07);
+  }
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (max-width: 767px) {
+  body,
+  a,
+  button {
+    cursor: auto;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .space-gradient,
+  .stars-sm,
+  .stars-md,
+  .nebula-a,
+  .nebula-b,
+  .shooting-star {
+    animation: none !important;
+  }
+
+  .link-orbit,
+  .link-plasma,
+  .card-nebula,
+  .card-comet,
+  .card-orbit,
+  .chip-astro {
+    transition-duration: 0.01ms !important;
+  }
+}
