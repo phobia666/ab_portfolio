@@ -114,3 +114,24 @@ export const projects = [
     website: 'https://chillthrivephobia.netlify.app/',
   },
 ]
+
+export const certificates = [
+  {
+    title: 'Google Certified Educator Level 1',
+    subtitle: 'United Latino Students Association',
+    img: 'google.png',
+    url: 'https://edu.google.accredible.com/14202053-d2aa-4d2f-b9f6-95f4bbf65fc9#acc.i9X0GCx4'
+  },
+  {
+    title: 'Web3 & Rust Foundations Certification',
+    subtitle: 'Xcan',
+    img: 'xcan.png',
+    url: 'https://sepolia.arbiscan.io/tx/0x265a18da5a9c4b37f0852e5399761574d3346b9706acbfca6b1189fabcafe8d1'
+  },
+  {
+    title: 'Web Development Fundamentals',
+    subtitle: 'IBM',
+    img: 'ibm.png',
+    url: 'https://www.credly.com/badges/46a4f60d-2a3e-47ae-87e6-1ffba6ecc026/linked_in_profile'
+  }
+]

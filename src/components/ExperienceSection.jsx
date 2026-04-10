@@ -1,4 +1,6 @@
-function ExperienceSection({ experiences }) {
+
+
+function ExperienceSection({ experiences, certificates }) {
   return (
     <section id="experience" className="rounded-3xl border border-white/10 bg-[#0d0f16]/75 p-6 backdrop-blur-sm sm:p-8">
       <h2 className="mb-5 text-2xl font-semibold">Experience</h2>
@@ -12,6 +14,19 @@ function ExperienceSection({ experiences }) {
             <p className="text-sm text-slate-300">{item.details}</p>
           </article>
         ))}
+        <div className="flex flex-wrap gap-5">
+          {certificates.map((certi) => (
+            <a 
+            key={certi.title}
+            href={certi.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex flex-col gap-3 justify-center items-center  w-80 card-nebula rounded-2xl border border-white/10 p-4">
+              <img className="w-auto" src= {certi.img} alt= "" />
+              <p className="text-sm text-slate-300">{certi.title}</p>
+            </a>
+          ))}
+        </div>
       </div>
     </section>
   )

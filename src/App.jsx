@@ -11,6 +11,7 @@ import ProjectsSection from './components/ProjectsSection'
 import SkillsSection from './components/SkillsSection'
 import StrengthsSection from './components/StrengthsSection'
 import {
+  certificates,
   education,
   experiences,
   familiarTech,
@@ -39,7 +40,9 @@ function App() {
         <HeroSection navLinks={navLinks} />
         {/* <AboutSection /> */}
         <EducationSection education={education} />
-        <ExperienceSection experiences={experiences} />
+        <ExperienceSection
+        experiences={experiences}
+        certificates={certificates} />
         <SkillsSection skillCards={skillCards} techSkills={techSkills} familiarTech={familiarTech} />
         <ProjectsSection projects={projects} />
         <StrengthsSection strengths={strengths} />
