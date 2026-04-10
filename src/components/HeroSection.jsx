@@ -28,8 +28,12 @@ function HeroSection({ navLinks }) {
         </div>
 
         <div className="hero-orb relative mx-auto h-64 w-64 rounded-full p-2">
-          <div className="flex h-full w-full items-center justify-center rounded-full bg-[#0a0c12]">
-            <p className="text-center text-5xl font-bold text-fuchsia-300">AS</p>
+        <div className="flex h-full w-full items-center justify-center rounded-full bg-[#0a0c12] overflow-hidden">
+          <img
+            src="ab1.png"   // change to your image path
+            alt="Profile"
+            className="h-full w-full object-cover rounded-full"
+          />
           </div>
           <span className="absolute -left-2 top-10 h-3 w-3 rounded-full bg-fuchsia-400 shadow-[0_0_18px_2px_#d946ef]" />
           <span className="absolute -right-1 bottom-12 h-3 w-3 rounded-full bg-indigo-400 shadow-[0_0_18px_2px_#818cf8]" />
