@@ -88,7 +88,7 @@ export const education = [
 export const projects = [
   {
     title: 'Task Manager',
-    tag: 'React + Firebase',
+    tag: 'Javascript + Firebase',
     image: '/task.png',
     description:
       'Web application to manage tasks with add, edit, and delete functionality. Integrated Firebase for real-time data storage and updates, with responsive design and efficient UI interactions.',
